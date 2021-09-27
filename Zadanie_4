@@ -18,6 +18,7 @@ int main()
 	return 0;
 }
 
+
 2)
 #include <iostream>
 using namespace std;
@@ -33,3 +34,96 @@ int main()
 	cout << "Длина окружности: L = PI * d = " << PI << " * " << d << " = " << L;
 	return 0;
 }
+
+
+3)
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	setlocale(0, "rus");
+	float a = 0, b = 0, Sr = 0;
+	cout << "Введите два числа:\n";
+	cout << "a = \t";
+	cin >> a;
+	cout << "b = \t";
+	cin >> b;
+	Sr = (a + b) / 2;
+	cout << "Среднее арифметическое : Sr = (a + b) / 2 = ( " << a << " + " << b << " ) / 2 = " << Sr;
+	return 0;
+}
+
+4)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	float a = 0, b = 0, raznost_a = 0, raznost_b = 0, summa = 0, proizvedenie = 0, chastnoe_kvadratov_a = 0, chastnoe_kvadratov_b = 0;
+	cout << "Введите два ненулевых числа:\n";
+	cout << "a = ";
+	cin >> a;
+	cout << "b = ";
+	cin >> b; 
+	if (a != 0 and b != 0)
+	{
+		raznost_a = a - b;// а - уменьшаемое , b - вычитаемое
+		raznost_b = b - a;// b - уменьшаемое , a - вычитаемое
+		summa = a + b;
+		proizvedenie = a * b;
+		chastnoe_kvadratov_a = (a * a) / (b * b); // а^2 - делимое , b^2 - делитель
+		chastnoe_kvadratov_b = (b * b) / (a * a); // b^2 - делимое , a^2 - делитель
+		cout << "Разность, если уменьшаемое - а: a - b = " << a << " - " << b << " = " << raznost_a << "\n";
+		cout << "Разность, если уменьшаемое - b: b - a = " << b << " - " << a << " = " << raznost_b << "\n";
+		cout << "Cумма: a + b = " << a << " + " << b << " = " << summa << "\n";
+		cout << "Произведение: a * b = " << a << " * " << b << " = " << proizvedenie << "\n";
+		cout << "Частное квадратов, если а^2 - делимое: a^2 / b^2 = " << a * a << " / " << b * b << " = " << chastnoe_kvadratov_a << "\n";
+		cout << "Частное квадратов, если b^2 - делимое: b^2 / a^2 = " << b * b << " / " << a * a << " = " << chastnoe_kvadratov_b << "\n";
+	
+	}
+	else
+	{
+		cout << "Введите число отличное от нуля";
+	}
+	return 0;
+}
+
+5)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	float a = 0, b = 0, raznost_a = 0, raznost_b = 0, summa = 0, proizvedenie = 0, chastnoe_modylei_a = 0, chastnoe_modylei_b = 0;
+	cout << "Введите два ненулевых числа:\n";
+	cout << "a = ";
+	cin >> a;
+	cout << "b = ";
+	cin >> b; 
+	if (a != 0 and b != 0)
+	{
+		raznost_a = a - b;// а - уменьшаемое , b - вычитаемое
+		raznost_b = b - a;// b - уменьшаемое , a - вычитаемое
+		summa = a + b;
+		proizvedenie = a * b;
+		chastnoe_modylei_a = abs (a)  / abs(b); // |а| - делимое , |b| - делитель
+		chastnoe_modylei_b = abs(b) / abs(a); // |b| - делимое , |a| - делитель
+		cout << "Разность, если уменьшаемое - а: a - b = " << a << " - " << b << " = " << raznost_a << "\n";
+		cout << "Разность, если уменьшаемое - b: b - a = " << b << " - " << a << " = " << raznost_b << "\n";
+		cout << "Cумма: a + b = " << a << " + " << b << " = " << summa << "\n";
+		cout << "Произведение: a * b = " << a << " * " << b << " = " << proizvedenie << "\n";
+		cout << "Частное квадратов, если |а| - делимое: |а| / |b| = " << abs(a) << " / " << abs(b) << " = " << chastnoe_modylei_a << "\n";
+		cout << "Частное квадратов, если |b| - делимое: |b| / |а| = " << abs(b) << " / " << abs(a) << " = " << chastnoe_modylei_b << "\n";
+	
+	}
+	else
+	{
+		cout << "Введите число отличное от нуля";
+	}
+	return 0;
+}
+
