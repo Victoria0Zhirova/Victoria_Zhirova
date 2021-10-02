@@ -106,16 +106,16 @@ int main()
 	cin >> b; 
 	if (a != 0 and b != 0)
 	{
-		raznost_a = a - b;// а - уменьшаемое , b - вычитаемое
-		raznost_b = b - a;// b - уменьшаемое , a - вычитаемое
-		summa = a + b;
-		proizvedenie = a * b;
+		raznost_a = abs(a) - abs( b);// а - уменьшаемое , b - вычитаемое
+		raznost_b = abs( b) - abs(a);// b - уменьшаемое , a - вычитаемое
+		summa =abs(a) + abs( b);
+		proizvedenie = abs(a) * abs( b);
 		chastnoe_modylei_a = abs (a)  / abs(b); // |а| - делимое , |b| - делитель
 		chastnoe_modylei_b = abs(b) / abs(a); // |b| - делимое , |a| - делитель
-		cout << "Разность, если уменьшаемое - а: a - b = " << a << " - " << b << " = " << raznost_a << "\n";
-		cout << "Разность, если уменьшаемое - b: b - a = " << b << " - " << a << " = " << raznost_b << "\n";
-		cout << "Cумма: a + b = " << a << " + " << b << " = " << summa << "\n";
-		cout << "Произведение: a * b = " << a << " * " << b << " = " << proizvedenie << "\n";
+		cout << "Разность, если уменьшаемое - а: a - b = " << abs(a) << " - " << abs(b) << " = " << raznost_a << "\n";
+		cout << "Разность, если уменьшаемое - b: b - a = " << abs(b) << " - " << abs(a) << " = " << raznost_b << "\n";
+		cout << "Cумма: a + b = " << abs(a) << " + " << abs(b) << " = " << summa << "\n";
+		cout << "Произведение: a * b = " << abs(a) << " * " << abs(b) << " = " << proizvedenie << "\n";
 		cout << "Частное квадратов, если |а| - делимое: |а| / |b| = " << abs(a) << " / " << abs(b) << " = " << chastnoe_modylei_a << "\n";
 		cout << "Частное квадратов, если |b| - делимое: |b| / |а| = " << abs(b) << " / " << abs(a) << " = " << chastnoe_modylei_b << "\n";
 	
@@ -126,4 +126,3 @@ int main()
 	}
 	return 0;
 }
-
