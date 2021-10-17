@@ -7,13 +7,13 @@ int main()
 	setlocale(0, "rus");
 	double x1 = 0, x2 = 0, y1 = 0, y2 = 0, katetx = 0, katety = 0, rast = 0;
 	cout << "Введите координаты точек:\n";
-	cout << "x1 =  \t"; 
+	cout << "\tx1 = ";
 	cin >> x1;
-	cout << "y1 =  \t";
+	cout << "\ty1 = ";
 	cin >> y1;
-	cout << "x2 =  \t";
+	cout << "\tx2 = ";
 	cin >> x2;
-	cout << "y2 =  \t";
+	cout << "\ty2 = ";
 	cin >> y2;
 	if (x1 > x2)
 	{
@@ -184,8 +184,299 @@ int main()
 		}
 	}
 	cout << "Длина отрезка ас: " << ac << "\n";
-	cout << "Длина отрезка ас: " << bc << "\n";
+	cout << "Длина отрезка bс: " << bc << "\n";
 	cout << "Сумма : ac + bc = " << ac + bc;
 	return 0;
 }
+
+3)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double a=0,b=0,c=0, ac=0,bc=0;
+	cout << "Введите координаты точек:\n";
+	cout << "\ta = ";
+	cin >> a;
+	cout << "\tb = ";
+	cin >> b;
+	cout << "\tc = ";
+	cin >> c;
+	if (a > b)
+	{
+		if (c > a or c < b)
+		{
+			cout << "Введите данные, удовлетворяющие условию: точка с лежит между а и b ";
+		}
+		else
+		{
+			if (a > c)
+			{
+				if (a >= 0)
+				{
+					if (c >= 0)
+					{
+						ac = a - c;
+					}
+					else
+					{
+						ac = abs(c) + a;
+					}
+				}
+				else
+				{
+					ac = abs(c) - abs(a);
+				}
+			}
+			else
+			{
+				if (c >= 0)
+				{
+					if (a >= 0)
+					{
+						ac = c - a;
+					}
+					else
+					{
+						ac = abs(a) + c;
+					}
+				}
+				else
+				{
+					ac = abs(a) - abs(c);
+				}
+			}
+			if (b > c)
+			{
+				if (b >= 0)
+				{
+					if (c >= 0)
+					{
+						bc = b - c;
+					}
+					else
+					{
+						bc = abs(c) + b;
+					}
+				}
+				else
+				{
+					bc = abs(c) - abs(b);
+				}
+			}
+			else
+			{
+				if (c >= 0)
+				{
+					if (b >= 0)
+					{
+						bc = c - b;
+					}
+					else
+					{
+						bc = abs(b) + c;
+					}
+				}
+				else
+				{
+					bc = abs(b) - abs(c);
+				}
+			}
+			cout << "Длина отрезка ас: " << ac << "\n";
+			cout << "Длина отрезка ас: " << bc << "\n";
+			cout << "Произведение : ac * bc = " << ac * bc;
+		}
+	}
+	else
+	{
+		if (c > b or c < a)
+		{
+			cout << "Введите данные, удовлетворяющие условию: точка с лежит между а и b ";
+		}
+		else
+		{
+			if (a > c)
+			{
+				if (a >= 0)
+				{
+					if (c >= 0)
+					{
+						ac = a - c;
+					}
+					else
+					{
+						ac = abs(c) + a;
+					}
+				}
+				else
+				{
+					ac = abs(c) - abs(a);
+				}
+			}
+			else
+			{
+				if (c >= 0)
+				{
+					if (a >= 0)
+					{
+						ac = c - a;
+					}
+					else
+					{
+						ac = abs(a) + c;
+					}
+				}
+				else
+				{
+					ac = abs(a) - abs(c);
+				}
+			}
+			if (b > c)
+			{
+				if (b >= 0)
+				{
+					if (c >= 0)
+					{
+						bc = b - c;
+					}
+					else
+					{
+						bc = abs(c) + b;
+					}
+				}
+				else
+				{
+					bc = abs(c) - abs(b);
+				}
+			}
+			else
+			{
+				if (c >= 0)
+				{
+					if (b >= 0)
+					{
+						bc = c - b;
+					}
+					else
+					{
+						bc = abs(b) + c;
+					}
+				}
+				else
+				{
+					bc = abs(b) - abs(c);
+				}
+			}
+			cout << "Длина отрезка ас: " << ac << "\n";
+			cout << "Длина отрезка ас: " << bc << "\n";
+			cout << "Произведение : ac * bc = " << ac * bc;
+		}
+	}
+	return 0;
+}
+4)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double x1 = 0, x2 = 0, y1 = 0, y2 = 0, storona_x = 0, storona_y = 0, S = 0,P=0;
+	cout << "Введите координаты вершин:\n";
+	cout << "\tx1 = ";
+	cin >> x1;
+	cout << "\ty1 = ";
+	cin >> y1;
+	cout << "\tx2 = ";
+	cin >> x2;
+	cout << "\ty2 = ";
+	cin >> y2;
+	if (x1 > x2)
+	{
+		if (x1 >= 0)
+		{
+			if (x2 >= 0)
+			{
+				storona_x = x1 - x2;
+			}
+			else
+			{
+				storona_x = x1 + abs(x2);
+			}
+
+		}
+		else
+		{
+			storona_x = abs(x1) - abs(x2);
+		}
+
+	}
+	else
+	{
+		if (x2 >= 0)
+		{
+			if (x1 >= 0)
+			{
+				storona_x = x2 - x1;
+			}
+			else
+			{
+				storona_x = x2 + abs(x1);
+			}
+
+		}
+		else
+		{
+			storona_x = abs(x2) - abs(x1);
+		}
+	}
+	if (y1 > y2)
+	{
+		if (y1 >= 0)
+		{
+			if (y2 >= 0)
+			{
+				storona_y = y1 - y2;
+			}
+			else
+			{
+				storona_y = y1 + abs(y2);
+			}
+		}
+		else
+		{
+			storona_y = abs(y1) - abs(y2);
+		}
+	}
+	else
+	{
+		if (y2 >= 0)
+		{
+			if (y1 >= 0)
+			{
+				storona_y = y2 - y1;
+			}
+			else
+			{
+				storona_y = y2 + abs(y1);
+			}
+
+		}
+		else
+		{
+			storona_y = abs(y2) - abs(y1);
+		}
+	}
+	S = storona_x * storona_y;
+	P = 2 * (storona_x + storona_y);
+	cout << "Площадь : " << S << "\n";
+	cout << "Периметр : " << P;
+	return 0;
+}
+
+5)
+
+
 
