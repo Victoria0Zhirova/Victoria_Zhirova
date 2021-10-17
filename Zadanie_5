@@ -1,0 +1,97 @@
+1)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double x1 = 0, x2 = 0, y1 = 0, y2 = 0, katetx = 0, katety = 0, rast = 0;
+	cout << "Введите координаты точек:\n";
+	cout << "x1 =  \t";
+	cin >> x1;
+	cout << "y1 =  \t";
+	cin >> y1;
+	cout << "x2 =  \t";
+	cin >> x2;
+	cout << "y2 =  \t";
+	cin >> y2;
+	if (x1 > x2)
+	{
+		if (x1 >= 0)
+		{
+			if (x2 >= 0)
+			{
+				katetx = x1 - x2;
+			}
+			else
+			{
+				katetx = x1 + abs(x2);
+			}
+
+		}
+		else
+		{
+			katetx = abs(x1) - abs(x2);
+		}
+	
+	}
+	else
+	{
+		if (x2 >= 0)
+		{
+			if (x1 >= 0)
+			{
+				katetx = x2 - x1;
+			}
+			else
+			{
+				katetx = x2 + abs(x1);
+			}
+
+		}
+		else
+		{
+			katetx = abs(x2) - abs(x1);
+		}
+	}
+	if (y1 > y2)
+	{
+		if (y1 >= 0)
+		{
+			if (y2 >= 0)
+			{
+				katety = y1 - y2;
+			}
+			else
+			{
+				katety = y1 + abs(y2);
+			}
+		}
+		else
+		{
+			katety = abs(y1) - abs(y2);
+		}
+	}
+	else
+	{
+		if (y2 >= 0)
+		{
+			if (y1 >= 0)
+			{
+				katety = y2 - y1;
+			}
+			else
+			{
+				katety = y2 + abs(y1);
+			}
+
+		}
+		else
+		{
+			katety = abs(y2) - abs(y1);
+		}
+	}
+	rast = sqrt(pow(katetx, 2) + pow(katety, 2));
+	cout << "Расстояние : " << rast;
+	return 0;
+}
