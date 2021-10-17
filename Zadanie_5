@@ -7,7 +7,7 @@ int main()
 	setlocale(0, "rus");
 	double x1 = 0, x2 = 0, y1 = 0, y2 = 0, katetx = 0, katety = 0, rast = 0;
 	cout << "Введите координаты точек:\n";
-	cout << "x1 =  \t";
+	cout << "x1 =  \t"; 
 	cin >> x1;
 	cout << "y1 =  \t";
 	cin >> y1;
@@ -95,3 +95,97 @@ int main()
 	cout << "Расстояние : " << rast;
 	return 0;
 }
+
+2)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double a=0,b=0,c=0, ac=0,bc=0;
+	cout << "Введите координаты точек:\n";
+	cout << "\ta = ";
+	cin >> a;
+	cout << "\tb = ";
+	cin >> b;
+	cout << "\tc = ";
+	cin >> c;
+	if (a > c)
+	{
+		if (a >= 0)
+		{
+			if (c >= 0)
+			{
+				ac = a - c;
+			}
+			else
+			{
+				ac = abs(c) + a;
+			}
+		}
+		else
+		{
+			ac = abs(c) - abs(a);
+		}
+	}
+	else
+	{
+		if (c >= 0)
+		{
+			if (a >= 0)
+			{
+				ac = c - a;
+			}
+			else
+			{
+				ac = abs(a) + c;
+			}
+		}
+		else
+		{
+			ac = abs(a) - abs(c);
+		}
+	}
+	if (b > c)
+	{
+		if (b >= 0)
+		{
+			if (c >= 0)
+			{
+				bc = b- c;
+			}
+			else
+			{
+				bc = abs(c) + b;
+			}
+		}
+		else
+		{
+			bc = abs(c) - abs(b);
+		}
+	}
+	else
+	{
+		if (c >= 0)
+		{
+			if (b >= 0)
+			{
+				bc = c - b;
+			}
+			else
+			{
+				bc = abs(b) + c;
+			}
+		}
+		else
+		{
+			bc = abs(b) - abs(c);
+		}
+	}
+	cout << "Длина отрезка ас: " << ac << "\n";
+	cout << "Длина отрезка ас: " << bc << "\n";
+	cout << "Сумма : ac + bc = " << ac + bc;
+	return 0;
+}
+
