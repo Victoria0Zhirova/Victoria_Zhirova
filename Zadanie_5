@@ -477,6 +477,264 @@ int main()
 }
 
 5)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double x1 = 0, x2 = 0,x3=0,y3=0, y1 = 0, y2 = 0, katetx_1 = 0, katety_1 = 0, Storona_1 = 0,katety_2=0,katetx_2=0,Storona_2=0,katetx_3=0,katety_3=0,Storona_3=0,P=0,S=0,p=0;
+	cout << "Введите координаты точек:\n";
+	cout << "\tx1 = ";
+	cin >> x1;
+	cout << "\ty1 = ";
+	cin >> y1;
+	cout << "\tx2 = ";
+	cin >> x2;
+	cout << "\ty2 = ";
+	cin >> y2;
+	cout << "\tx3 = ";
+	cin >> x3;
+	cout << "\ty3 = ";
+	cin >> y3;
+	if (x1 > x2)
+	{
+		if (x1 >= 0)
+		{
+			if (x2 >= 0)
+			{
+				katetx_1 = x1 - x2;
+			}
+			else
+			{
+				katetx_1 = x1 + abs(x2);
+			}
+
+		}
+		else
+		{
+			katetx_1 = abs(x1) - abs(x2);
+		}
+
+	}
+	else
+	{
+		if (x2 >= 0)
+		{
+			if (x1 >= 0)
+			{
+				katetx_1 = x2 - x1;
+			}
+			else
+			{
+				katetx_1 = x2 + abs(x1);
+			}
+
+		}
+		else
+		{
+			katetx_1 = abs(x2) - abs(x1);
+		}
+	}
+	if (y1 > y2)
+	{
+		if (y1 >= 0)
+		{
+			if (y2 >= 0)
+			{
+				katety_1 = y1 - y2;
+			}
+			else
+			{
+				katety_1 = y1 + abs(y2);
+			}
+		}
+		else
+		{
+			katety_1 = abs(y1) - abs(y2);
+		}
+	}
+	else
+	{
+		if (y2 >= 0)
+		{
+			if (y1 >= 0)
+			{
+				katety_1 = y2 - y1;
+			}
+			else
+			{
+				katety_1 = y2 + abs(y1);
+			}
+
+		}
+		else
+		{
+			katety_1 = abs(y2) - abs(y1);
+		}
+	}
+	Storona_1 = sqrt(pow(katetx_1, 2) + pow(katety_1, 2));
+	if (x1 > x3)
+	{
+		if (x1 >= 0)
+		{
+			if (x3 >= 0)
+			{
+				katetx_2 = x1 - x3;
+			}
+			else
+			{
+				katetx_2 = x1 + abs(x3);
+			}
+
+		}
+		else
+		{
+			katetx_2 = abs(x1) - abs(x3);
+		}
+
+	}
+	else
+	{
+		if (x3 >= 0)
+		{
+			if (x1 >= 0)
+			{
+				katetx_2 = x3 - x1;
+			}
+			else
+			{
+				katetx_2 = x3 + abs(x1);
+			}
+
+		}
+		else
+		{
+			katetx_2 = abs(x3) - abs(x1);
+		}
+	}
+	if (y1 > y3)
+	{
+		if (y1 >= 0)
+		{
+			if (y3 >= 0)
+			{
+				katety_2 = y1 - y3;
+			}
+			else
+			{
+				katety_2 = y1 + abs(y3);
+			}
+		}
+		else
+		{
+			katety_2 = abs(y1) - abs(y3);
+		}
+	}
+	else
+	{
+		if (y3 >= 0)
+		{
+			if (y1 >= 0)
+			{
+				katety_2 = y3 - y1;
+			}
+			else
+			{
+				katety_2 = y3 + abs(y1);
+			}
+
+		}
+		else
+		{
+			katety_2 = abs(y3) - abs(y1);
+		}
+	}
+	Storona_2 = sqrt(pow(katetx_2, 2) + pow(katety_2, 2));
+	if (x3 > x2)
+	{
+		if (x3 >= 0)
+		{
+			if (x2 >= 0)
+			{
+				katetx_3 = x3 - x2;
+			}
+			else
+			{
+				katetx_3 = x3 + abs(x2);
+			}
+
+		}
+		else
+		{
+			katetx_3 = abs(x3) - abs(x2);
+		}
+
+	}
+	else
+	{
+		if (x2 >= 0)
+		{
+			if (x3 >= 0)
+			{
+				katetx_3 = x2 - x3;
+			}
+			else
+			{
+				katetx_3 = x2 + abs(x3);
+			}
+
+		}
+		else
+		{
+			katetx_3 = abs(x2) - abs(x3);
+		}
+	}
+	if (y3 > y2)
+	{
+		if (y3 >= 0)
+		{
+			if (y2 >= 0)
+			{
+				katety_3 = y3 - y2;
+			}
+			else
+			{
+				katety_3 = y3 + abs(y2);
+			}
+		}
+		else
+		{
+			katety_3 = abs(y3) - abs(y2);
+		}
+	}
+	else
+	{
+		if (y2 >= 0)
+		{
+			if (y3 >= 0)
+			{
+				katety_3 = y2 - y3;
+			}
+			else
+			{
+				katety_3 = y2 + abs(y3);
+			}
+
+		}
+		else
+		{
+			katety_3 = abs(y2) - abs(y3);
+		}
+	}
+	Storona_3 = sqrt(pow(katetx_3, 2) + pow(katety_3, 2));
+	P = Storona_1 + Storona_2 + Storona_3;
+	p = P / 2;
+	S = sqrt(p * (p - Storona_1) * (p - Storona_2) * (p - Storona_3));
+	cout << "Периметр треугольника : " << P << "\n";
+	cout << "Площадь треугольника : " << S;
+	return 0;
+}
 
 
 
