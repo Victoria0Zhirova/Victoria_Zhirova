@@ -1,0 +1,152 @@
+1)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B;
+	cout << "Введите значения для А и В: \n";
+	cout << "\tA = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	A = A ^ B;
+	B = A ^ B;
+	A = A ^ B;
+  cout << "После преобразований: \n";
+	cout << "\tA = " << A << "\n";
+	cout << "\tB = " << B;
+	return 0;
+}
+
+2)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B,C;
+	cout << "Введите значения для А и В: \n";
+	cout << "\tA = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	cout << "\tC = ";
+	cin >> C;
+	A = A ^ B;
+	B = A ^ B;
+	A = A ^ B;// A теперь содержит значение В
+	C = C ^ A;
+	A = C ^ A;
+	C = C ^ A;
+	cout << "После преобразований: \n";
+	cout << "\tA = " << A << "\n";
+	cout << "\tB = " << B << "\n";
+	cout << "\tC = " << C;
+	return 0;
+}
+
+3)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B,C;
+	cout << "Введите значения для А и В: \n";
+	cout << "\tA = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	cout << "\tC = ";
+	cin >> C;
+	A = A ^ C;
+	C = A ^ C;//C теперь содержит значение A
+	A = A ^ C;// A -  C
+	A = A ^ B;
+	B = A ^ B;// B - C
+	A = A ^ B;// A - B
+	cout << "После преобразований: \n";
+	cout << "\tA = " << A << "\n";
+	cout << "\tB = " << B << "\n";
+	cout << "\tC = " << C;
+	return 0;
+}
+
+4)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double x, y ;
+	cout << "Введите значение х для вычисления y = 3x^6 - 6x^2 - 7:\n";
+	cout << "\tx = ";
+	cin >> x;
+	y = 3 * pow(x, 6) - 6 * pow(x, 2) - 7;
+	cout << "y = 3x^6 - 6x^2 - 7 = " << 3* pow(x, 6) << " - " << 6 * pow(x, 2) << " - 7 = "<< y;
+	return 0;
+}
+
+5)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double x, y ;
+	cout << "Введите значение х для вычисления y = 4(x-3)^6 - 7(x-3)^3 + 2:\n";
+	cout << "\tx = ";
+	cin >> x;
+	y = 4 * pow(x-3, 6) - 7 * pow(x-3, 3) + 2;
+	cout << "y = 4(x-3)^6 - 7(x-3)^3 + 2 = " << 4 * pow(x - 3, 6) << " - " << 7 * pow(x - 3, 3) << " + 2 = "<< y;
+	return 0;
+}
+
+6)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double A, t ;
+	cout << "ВВедите значение А, для вычисления А^8: \n";
+	cout << "\tA = ";
+	cin >> A;
+	t = A * A;
+	t = t * t;
+	A = t * t;
+	cout << "A^8 = " << A;
+	return 0;
+}
+
+7) 
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double A, t, k ;
+	cout << "ВВедите значение А, для вычисления А^15: \n";
+	cout << "\tA = ";
+	cin >> A;
+	k = A;
+	t = A * A;
+	t = t * t;
+	t = t * t;
+	t = t * t;
+	A = t * pow(k, -1);
+	cout << "A^15 = " << A;
+	return 0;
+}
