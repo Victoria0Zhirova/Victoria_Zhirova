@@ -1,0 +1,156 @@
+1)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double ygol, pi,rad;
+	cout << "Введите значение угла: ";
+	cin >> ygol;
+	rad = ygol / 180;
+	cout << rad << " pi радиан";
+	return 0;
+}
+
+2)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double rad, pi,ygol;
+	cout << "Введите значение угла в радианах: ";
+	cin >> rad;
+	ygol = rad * 180 ;
+	cout << ygol << " градусов";
+	return 0;
+}
+
+3)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double X,A,Y,kg,price;
+	cout << "Сколько кг Вы преобрели? \n";
+	cout << "\t";
+	cin >> X;
+	cout << "По какой цене(в рублях)? \n";
+	cout << "\t";
+	cin >> A;
+	kg = A / X;
+	cout << "1 кг стоит: "<< kg<<" руб.\n";
+	cout << "Сколько ещё кг Вам понадобится?";
+	cout << "\t";
+	cin >> Y;
+	price = Y * kg;
+	cout << "С Вас потребуют " << price<<" руб.";
+	return 0;
+}
+
+4)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double V1,V2,S,it,T;
+	cout << "Укажите скорость (в км/ч) первого автомобиля: ";
+	cin >> V1;
+	cout << "Укажите скорость (в км/ч) второго автомобиля: ";
+	cin >> V2;
+	cout << "Укажите расстояние (в км) между автомобилями: ";
+	cin >> S;
+	cout << "Укажите время (в ч): ";
+	cin >> T;
+	it = (V1 + V2) * T + S;
+	cout << "Через "<< T << " ч расстояние между автомобилями составит " << it << " км";ъ
+	return 0;
+}
+
+5)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	double A, x, B;
+	cout << "Введите коээфициенты для решения уроавнения А * х + В = 0: \n";
+	cout << "\t A = ";
+	cin >> A;
+	if (A == 0)
+	{
+		cout << "Коэффициент при неизвестной не может равняться нулю! \n";
+		cout << "\t A = ";
+		cin >> A;
+	}
+	cout << "\t В = ";
+	cin >> B;
+	x = (-B) / A;
+	cout << "Решение уравнения: " << x;
+
+	return 0;
+}
+
+6)
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+
+int main()
+{
+	setlocale(0, "rus");
+	double A1,A2,C1,C2, x, y, B1,B2,k,l,m;
+	cout << "Введите коээфициенты для решения системы уроавнений: \n";
+	cout << "\tA1·x + B1·y = C1\n";
+	cout << "\tA2·x + B2·y = C2\n";
+	cout << "\t A1 = ";
+	cin >> A1;
+	cout << "\t A2 = ";
+	cin >> A2;
+	cout << "\t B1 = ";
+	cin >> B1;
+	cout << "\t B2 = ";
+	cin >> B2;
+	cout << "\t C1 = ";
+	cin >> C1;
+	cout << "\t C2 = ";
+	cin >> C2;
+	k = A1 / A2;
+	l = B1 / B2;
+	m = C1 / C2;
+	if (k==l)
+	{
+		if (k == m)
+		{
+			y = (C2 - (A2 * C1) / A1) / (B2 - B1 / A1);
+			x = (C1 - B1 * y) / A1;
+			cout << "Решение системы: \n";
+			cout << "\t x = \n" << x;
+			cout << "\t y = " << y;
+		}
+		else
+		{
+			cout << "Система не имеет решений";
+		}
+	}
+	else
+	{
+		cout << "Система не имеет решений";
+	}
+	return 0;
+}
