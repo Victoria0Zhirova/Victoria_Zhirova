@@ -114,7 +114,7 @@ using namespace std;
 int main()
 {
 	setlocale(0, "rus");
-	double A1,A2,C1,C2, x, y, B1,B2,k,l,m;
+	double A1, A2, C1, C2, x, y, B1, B2, k, l, m;
 	cout << "Введите коээфициенты для решения системы уроавнений: \n";
 	cout << "\tA1·x + B1·y = C1\n";
 	cout << "\tA2·x + B2·y = C2\n";
@@ -130,27 +130,33 @@ int main()
 	cin >> C1;
 	cout << "\t C2 = ";
 	cin >> C2;
-	k = A1 / A2;
-	l = B1 / B2;
-	m = C1 / C2;
-	if (k==l)
+	k = A1 * B2 - B1 * A2;
+	l = C1 * B2 - B1 * C2;
+	m = A1 * C2 - C1 * A2;
+	if (k == 0)
 	{
-		if (k == m)
-		{
-			y = (C2 - (A2 * C1) / A1) / (B2 - B1 / A1);
-			x = (C1 - B1 * y) / A1;
-			cout << "Решение системы: \n";
-			cout << "\t x = \n" << x;
-			cout << "\t y = " << y;
-		}
-		else
-		{
-			cout << "Система не имеет решений";
-		}
+		cout << "Система не имеет решений!";
 	}
 	else
 	{
-		cout << "Система не имеет решений";
+		x = l / k;
+		y = m / k;
+		if (y == -0)
+		{
+			cout << "  y = 0";
+		}
+		else
+		{
+			cout << "  y = " << y;
+		}
+		if (x == -0)
+		{
+			cout << "  x = 0";
+		}
+		else
+		{
+			cout << "  x = " << x;
+		}
 	}
 	return 0;
 }
