@@ -1,0 +1,64 @@
+1)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int sek;
+	double мин;
+	cout << "Введите количество секунд: ";
+	cin >> sek;
+	мин = sek % 60;
+	cout << "C начала последней минуты прошло "<<мин<<" cек.";
+}
+
+3)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int day,n,sdv,w;
+	double week,k;
+	cout << "1 января было днем недели с номером: ";
+	cin >> n;
+	cout << "Введите номер дня: ";
+	cin >> day;
+	k = day % 7;
+	sdv = n - 1;
+	w = k + sdv;
+	week = w%7;
+	if (week == 0)
+	{
+		cout << "Это былo воскресенье (7)";
+	}
+	if (week == 1)
+	{
+		cout << "Это был понедельник (1)";
+	}
+	if (week == 2)
+	{
+		cout << "Это был вторник (2)";
+	}
+	if (week == 3)
+	{
+		cout << "Это была среда (3)";
+	}
+	if (week == 4)
+	{
+		cout << "Это был четверг (4)";
+	}
+	if (week == 5)
+	{
+		cout << "Это была пятница (5)";
+	}
+	if (week == 6)
+	{
+		cout << "Это была суббота (6)";
+	}
+}
+4)
