@@ -62,3 +62,39 @@ int main()
 	}
 }
 4)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A,B,C,ch,sk,otv;
+	cout << "Введите значения длин: \n";
+	cout << "Прямоугольник со сторонами А на В:\n";
+	cout << "\tA = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	cout << "Квадрат со стороной С:\n";
+	cout << "\tС = ";
+	cin >> C;
+	ch = A / C;
+	sk = B / C;
+	otv = sk * ch;
+	cout << "В прямоугольник поместится " << otv << " квадр. без наложения";
+}
+5)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int vek,god;
+	cout << "Введите номер года: ";
+	cin >> god;
+	vek = (god / 100) + 1;
+	cout << "Это было "<< vek<<" столетие";
+}
