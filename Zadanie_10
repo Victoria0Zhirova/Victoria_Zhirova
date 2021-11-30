@@ -1,0 +1,107 @@
+1)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A,B;
+	cout << "Введите знчаения чисел:\n ";
+	cout << "\tА = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	if (A > 2 and B <= 3)
+	{
+		cout << "Истина";
+	}
+	else
+	{
+		cout << "Ложь";
+	}
+}
+
+2)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B, C;
+	bool otv;
+	cout << "Введите знчаения чисел:\n ";
+	cout << "\tА = ";
+	cin >> A;
+	cout << "\tB = ";
+	cin >> B;
+	cout << "\tC = ";
+	cin >> C;
+	otv = (A < B) * (B < C);
+	if (otv==1)
+	{
+		cout << "Истина";
+	}
+	else
+	{
+		cout << "Ложь";
+	}
+}
+
+3)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B, C;
+	bool otv;
+	cout << "Введите число: ";
+	cin >> A;
+	B = A / 10;
+	C = A % 10;
+	otv = (B>0) * ((C%2)==0);
+	if (otv==1)
+	{
+		cout << "Истина";
+	}
+	else
+	{
+		cout << "Ложь";
+	}
+ }
+ 
+ 4)
+ #include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int A, B, C,D;
+	bool otv;
+	cout << "Введите число: ";
+	cin >> A;
+	D = A / 100;
+	A = A % 100;
+	B = A / 10;
+	C = A % 10;
+	otv = ((A > B) * (B < C)) + ((A < B) * (B > C));
+	if ((otv)==1)
+	{
+		cout << "Истина";
+	}
+	else
+	{
+		cout << "Ложь";
+	}
+}
+
+5)
+
+ 
