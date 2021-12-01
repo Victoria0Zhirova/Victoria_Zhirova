@@ -103,5 +103,114 @@ int main()
 }
 
 5)
+#include <iostream>
+#include <math.h>
+using namespace std;
 
+int main()
+{
+	setlocale(0, "rus");
+	int A, B, C, D;
+	bool otv;
+	cout << "Введите четырёхзначное число: ";
+	cin >> A;
+	B = A / 1000;
+	A = A % 1000;
+	C = A / 100;
+	A = A % 100;
+	D = A / 10;
+	A = A % 10;
+	if (A == B and C == D)
+	{
+		cout << "Данное число читается одинаково слева направо и справа налевo";
+	}
+	else
+	{
+		cout << "Данное число НЕ читается одинаково слева направо и справа налевo";
+	}
+
+	
+}
+
+6)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int a,b,c;
+	cout << "Введите стороны прямоугольника:\n";
+	cout << "\ta = ";
+	cin >> a;
+	cout << "\tb = ";
+	cin >> b;
+	cout << "\tc = ";
+	cin >> c;
+	if (a > b and a > c)
+	{
+		if (pow(a, 2)==(pow(b, 2)+ pow(c, 2)))
+		{
+			cout << "Треугольник прямоугольный";
+		} 
+		else
+		{
+			cout << "Треугольник НЕ прямоугольный";
+		}
+	}
+	else
+	{
+		if (b > a and b > c)
+		{
+			if (pow(b, 2) == (pow(a, 2) + pow(c, 2)))
+			{
+				cout << "Треугольник прямоугольный";
+			}
+			else
+			{
+				cout << "Треугольник НЕ прямоугольный";
+			}
+		}
+		else
+		{
+		
+			if (pow(c, 2) == (pow(b, 2) + pow(a, 2)))
+			{
+				cout << "Треугольник прямоугольный";
+			}
+			else
+			{
+				cout << "Треугольник НЕ прямоугольный";
+			}
+		}
+	}	
+}
+
+7)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int a,b,c;
+	cout << "Введите стороны прямоугольника:\n";
+	cout << "\ta = ";
+	cin >> a;
+	cout << "\tb = ";
+	cin >> b;
+	cout << "\tc = ";
+	cin >> c;
+	if (((a + b) > c) and ((a + c) > b) and ((c + b) > a))
+	{		
+		cout << "Треугольник существует";
+	}
+	else
+	{
+		cout << "Треугольник НЕ существует";
+		
+	}	
+}
  
