@@ -1,0 +1,407 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int num;
+	cout << "Введите номер задачи: ";
+	cin >> num;
+	if (num == 1)
+	{
+		int A, B;
+		cout << "Введите значение переменных:\n";
+		cout << "\tA = ";
+		cin >> A;
+		cout << "\tB = ";
+		cin >> B;
+		if (A == B)
+		{
+			A = 0;
+			B = 0;
+			cout << "\tA = " << A;
+			cout << "\tB = " << B;
+		}
+		else
+		{
+			if (A > B)
+			{
+				B = A;
+				cout << "\tA = " << A;
+				cout << "\tB = " << B;
+			}
+			else
+			{
+				A = B;
+				cout << "\tA = " << A;
+				cout << "\tB = " << B;
+			}
+		}
+	}
+	if (num == 2)
+	{
+		double A, B, C, sum;
+		cout << "Введите значение переменных:\n";
+		cout << "\tA = ";
+		cin >> A;
+		cout << "\tB = ";
+		cin >> B;
+		cout << "\tC = ";
+		cin >> C;
+		sum = max(A, B) + max(B, C);
+		cout << "Сумма максимальных: " << sum;			
+	}
+	if (num == 3)
+	{
+		double x1, x2, x3, y1, y2, y3,katetx1,katety1,rast1,katety,katetx,rast;
+		cout << "Введите координаты точек: \n";
+		cout << "A: \n";
+		cout << "\tx1 = ";
+		cin >> x1;
+		cout << "\ty1 = ";
+		cin >> y1;
+		cout << "B: \n";
+		cout << "\tx2 = ";
+		cin >> x2;
+		cout << "\ty2 = ";
+		cin >> y2;
+		cout << "C: \n";
+		cout << "\tx3 = ";
+		cin >> x3;
+		cout << "\ty3 = ";
+		cin >> y3;
+		if (x1 > x2)
+		{
+			if (x1 >= 0)
+			{
+				if (x2 >= 0)
+				{
+					katetx1 = x1 - x2;
+				}
+				else
+				{
+					katetx1 = x1 + abs(x2);
+				}
+
+			}
+			else
+			{
+				katetx1 = abs(x1) - abs(x2);
+			}
+
+		}
+		else
+		{
+			if (x2 >= 0)
+			{
+				if (x1 >= 0)
+				{
+					katetx1 = x2 - x1;
+				}
+				else
+				{
+					katetx1 = x2 + abs(x1);
+				}
+
+			}
+			else
+			{
+				katetx1 = abs(x2) - abs(x1);
+			}
+		}
+		if (y1 > y2)
+		{
+			if (y1 >= 0)
+			{
+				if (y2 >= 0)
+				{
+					katety1 = y1 - y2;
+				}
+				else
+				{
+					katety1 = y1 + abs(y2);
+				}
+			}
+			else
+			{
+				katety1 = abs(y1) - abs(y2);
+			}
+		}
+		else
+		{
+			if (y2 >= 0)
+			{
+				if (y1 >= 0)
+				{
+					katety1 = y2 - y1;
+				}
+				else
+				{
+					katety1 = y2 + abs(y1);
+				}
+
+			}
+			else
+			{
+				katety1 = abs(y2) - abs(y1);
+			}
+		}
+		rast1 = sqrt(pow(katetx1, 2) + pow(katety1, 2));
+		if (x1 > x3)
+		{
+			if (x1 >= 0)
+			{
+				if (x3 >= 0)
+				{
+					katetx = x1 - x3;
+				}
+				else
+				{
+					katetx = x1 + abs(x3);
+				}
+
+			}
+			else
+			{
+				katetx = abs(x1) - abs(x3);
+			}
+
+		}
+		else
+		{
+			if (x3 >= 0)
+			{
+				if (x1 >= 0)
+				{
+					katetx = x3 - x1;
+				}
+				else
+				{
+					katetx = x3 + abs(x1);
+				}
+
+			}
+			else
+			{
+				katetx = abs(x3) - abs(x1);
+			}
+		}
+		if (y1 > y3)
+		{
+			if (y1 >= 0)
+			{
+				if (y3 >= 0)
+				{
+					katety = y1 - y3;
+				}
+				else
+				{
+					katety = y1 + abs(y3);
+				}
+			}
+			else
+			{
+				katety = abs(y1) - abs(y3);
+			}
+		}
+		else
+		{
+			if (y3 >= 0)
+			{
+				if (y1 >= 0)
+				{
+					katety = y3 - y1;
+				}
+				else
+				{
+					katety = y3 + abs(y1);
+				}
+
+			}
+			else
+			{
+				katety = abs(y3) - abs(y1);
+			}
+		}
+		rast = sqrt(pow(katetx, 2) + pow(katety, 2));
+		if (rast1 < rast)
+		{
+			cout << "Ближайшая к А точка - В, расстояние от А до В: "<<rast1;
+		}
+		if (rast < rast1)
+		{
+			cout << "Ближайшая к А точка - C, расстояние от А до C: " << rast;
+		}
+		if (rast == rast1)
+		{
+			cout << "Точки расположены на одинаковом от А расстоянии, оно равняется " << rast;
+		}
+	}
+	if (num == 4)
+	{
+		int x, y;
+		cout << "Ведите координаты точки:\n";
+		cout << "\tx = ";
+		cin >> x;
+		cout << "\ty = ";
+		cin >> y;
+		if (x > 0)
+		{
+			if (y > 0)
+			{
+				cout << "Точка лежит в 1 четверти";
+			}
+			if (y<0)
+			{
+				cout << "Точка лежит в 4 четверти";
+			}
+			if (y == 0)
+			{
+				cout << "Точка лежит на оси х";
+			}
+		}
+		if (x < 0)
+		{
+			if (y > 0)
+			{
+				cout << "Точка лежит вo 2 четверти";
+			}
+			if (y < 0)
+			{
+				cout << "Точка лежит в 3 четверти";
+			}
+			if (y == 0)
+			{
+				cout << "Точка лежит на оси х";
+			}
+		}
+		if (x == 0)
+		{
+			if (y > 0 or y < 0)
+			{
+				cout << "Точка лежит на оси y";
+			}
+			else
+			{
+				cout << "Точка лежит в начале координат";
+			}
+		}
+	}
+	if (num == 5)
+	{
+		int A;
+		cout << "Введите число: ";
+		cin >> A;
+		if (A % 2 == 0)
+		{
+			if (A > 0)
+			{
+				cout << "Это чётное положительное число";
+			}
+			if (A < 0)
+			{
+				cout << "Это чётное отрицательное число";
+			}
+			if (A == 0)
+			{
+				cout << "Это нулевое число";
+			}
+		}
+		else
+		{
+			if (A > 0)
+			{
+				cout << "Это нечётное положительное число";
+			}
+			if (A < 0)
+			{
+				cout << "Это нечётное отрицательное число";
+			}
+		}
+	}
+	if (num == 6)
+	{
+		int A;
+		cout << "Введите число в диапазоне 1-999: ";
+		cin >> A;
+		if (A / 100 > 0)
+		{
+			if (A % 2 == 0)
+			{
+				if (A > 0)
+				{
+					cout << "Это чётное положительное трехзначное число";
+				}
+				if (A < 0)
+				{
+					cout << "Это чётное отрицательное трехзначное число";
+				}
+			}
+			else
+			{
+				if (A > 0)
+				{
+					cout << "Это нечётное положительное трехзначное число";
+				}
+				if (A < 0)
+				{
+					cout << "Это нечётное отрицательное трехзначное число";
+				}
+			}
+		}
+		else
+		{
+			if (A / 10 > 0)
+			{
+				if (A % 2 == 0)
+				{
+					if (A > 0)
+					{
+						cout << "Это чётное положительное двузначное число";
+					}
+					if (A < 0)
+					{
+						cout << "Это чётное отрицательное двузначное число";
+					}
+				}
+				else
+				{
+					if (A > 0)
+					{
+						cout << "Это нечётное положительное двузначное число";
+					}
+					if (A < 0)
+					{
+						cout << "Это нечётное отрицательное двузначное число";
+					}
+				}
+			}
+			else
+			{
+				if (A % 2 == 0)
+				{
+					if (A > 0)
+					{
+						cout << "Это чётное положительное однозначное число";
+					}
+					if (A < 0)
+					{
+						cout << "Это чётное отрицательное однозначное число";
+					}
+				}
+				else
+				{
+					if (A > 0)
+					{
+						cout << "Это нечётное положительное однозначное число";
+					}
+					if (A < 0)
+					{
+						cout << "Это нечётное отрицательное однозначное число";
+					}
+				}
+			}
+		}
+	}
+}
