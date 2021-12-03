@@ -76,31 +76,40 @@ int main()
  }
  
  4)
- #include <iostream>
+#include <iostream>
 #include <math.h>
 using namespace std;
 
 int main()
 {
 	setlocale(0, "rus");
-	int A, B, C,D;
+	int A, B, C, D,E;
 	bool otv;
-	cout << "Введите число: ";
+	cout << "Введите трёхзначное число: ";
 	cin >> A;
-	D = A / 100;
-	A = A % 100;
-	B = A / 10;
-	C = A % 10;
-	otv = ((A > B) * (B < C)) + ((A < B) * (B > C));
-	if ((otv)==1)
+	E = A / 1000;
+	if (E < 0)
 	{
-		cout << "Истина";
+		D = A / 100;
+		A = A % 100;
+		B = A / 10;
+		C = A % 10;
+		otv = ((A > B) * (B < C)) + ((A < B) * (B > C));
+		if ((otv) == 1)
+		{
+			cout << "Истина";
+		}
+		else
+		{
+			cout << "Ложь";
+		}
 	}
 	else
 	{
-		cout << "Ложь";
+		cout << "Введите ТРЁХЗНАЧНОЕ число: ";
 	}
 }
+
 
 5)
 #include <iostream>
