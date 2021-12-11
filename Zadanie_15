@@ -27,7 +27,7 @@ int Sign(int X)
 
 float RingS(float R1, float  R2)
 {
-	float S, pi = 3.14,sm,sb;
+	float S, pi = 3.14, sm, sb;
 	sm = pi * pow(R2, 2);
 	sb = pi * pow(R1, 2);
 	S = sb - sm;
@@ -81,7 +81,7 @@ string Quarter(int x, int y)
 }
 float Fact2(int N)
 {
-	int fac=1;
+	int fac = 1;
 	if (N % 2 != 0)
 	{
 		for (int i = 1; i < (N + 2); i += 2)
@@ -91,7 +91,7 @@ float Fact2(int N)
 	}
 	else
 	{
-		for (int i = 2; i <( N + 2); i += 2)
+		for (int i = 2; i < (N + 2); i += 2)
 		{
 			fac = fac * i;
 		}
@@ -110,9 +110,9 @@ int main()
 		float A;
 		cout << "Введите 5 чисел для вычисления их кубов\n";
 		cin >> A;
-		cout << A<<"^3 = "<<PowerA3(A) << "\n";
+		cout << A << "^3 = " << PowerA3(A) << "\n";
 		cin >> A;
-		cout << A << "^3 = " << PowerA3(A)<<"\n";
+		cout << A << "^3 = " << PowerA3(A) << "\n";
 		cin >> A;
 		cout << A << "^3 = " << PowerA3(A) << "\n";
 		cin >> A;
@@ -139,11 +139,31 @@ int main()
 		cout << "\tR2 = ";
 		cin >> R2;
 		cout << "Площадь кольца равна: " << RingS(R1, R2);
+		cout << "\tR1 = ";
+		cin >> R1;
+		cout << "\tR2 = ";
+		cin >> R2;
+		cout << "Площадь кольца равна: " << RingS(R1, R2);
+		cout << "\tR1 = ";
+		cin >> R1;
+		cout << "\tR2 = ";
+		cin >> R2;
+		cout << "Площадь кольца равна: " << RingS(R1, R2);
 	}
 	if (num == 4)
 	{
 		int x, y;
 		cout << "Ведите координаты точки:\n";
+		cout << "\tx = ";
+		cin >> x;
+		cout << "\ty = ";
+		cin >> y;
+		cout << Quarter(x, y);
+		cout << "\tx = ";
+		cin >> x;
+		cout << "\ty = ";
+		cin >> y;
+		cout << Quarter(x, y);
 		cout << "\tx = ";
 		cin >> x;
 		cout << "\ty = ";
