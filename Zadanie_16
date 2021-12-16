@@ -1,0 +1,136 @@
+#include <iostream>
+#include <math.h>
+#include <malloc.h>
+#include<time.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int num;
+	cout << "Введите номер задачи: ";
+	cin >> num;
+	if (num == 1)
+	{
+		int* Arr;
+		int N,k=1;
+		cout << "Введите размер массива : ";
+		cin >> N;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = k;
+			cout << "\tArr [ " << i+1 << " ] = " << Arr[i]<<"\n";
+			k += 2;
+		}
+	}
+	if (num == 2)
+	{
+		int* Arr;
+		int N, A, D, st = 0;
+		cout << "Введите количество членов геометрической прогрессии: ";
+		cin >> N;
+		cout << "Введите первый член геометрической прогрессии: ";
+		cin >> A;
+		cout << "Введите знаменатель геометрической прогрессии: ";
+		cin >> D;
+		Arr = (int*)malloc(N * sizeof(int));
+		Arr[0] = A*pow(D,st);
+		cout<< "\tArr [ " << 1 << " ] = " << Arr[0] << "\n";
+		for (int i = 1; i < N; i++)
+		{
+			st += 1;
+			Arr[i] = A * pow(D, st);
+			cout << "\tArr [ " << i + 1 << " ] = " << Arr[i] << "\n";
+		}
+	}
+	if (num == 3)
+	{
+		int* Arr;
+		int N, A, B;
+		cout << "Введите целые числа: (N>2)\n";
+		cout << "\tN = ";
+		cin >> N;
+		cout << "\tA = ";
+		cin >> A;
+		cout << "\tB = ";
+		cin >> B;
+		Arr = (int*)malloc(N * sizeof(int));
+		Arr[0] = A;
+		cout << "\tArr [ " << 1 << " ] = " << Arr[0] << "\n";
+		Arr[1] = B;
+		cout << "\tArr [ " << 2 << " ] = " << Arr[1] << "\n";
+		for (int i = 2; i < N; i++)
+		{
+			Arr[i] = Arr[i - 1] + Arr[i - 2];
+			cout << "\tArr [ " << i + 1 << " ] = " << Arr[i] << "\n";
+		}
+	}
+	if (num == 4)
+	{
+		int* Arr;
+		int N, A, B,max,k;
+		cout <<"Введите размер массива: ";
+		cin >> N;
+		cout << "Введите максимальный элемент массива: ";
+		cin >> max;
+		Arr = (int*)malloc(N * sizeof(int));
+		k = N;
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % max;
+			cout <<"\tArr["<< i +1<<"] = "<<Arr[i]<<"\n";
+		}
+		cout << "Ответ:\n";
+		for (int i = 0; i < N/2; i++)
+		{
+			cout << "\tArr [" << i+1  << "] = " << Arr[i] << "\n";
+			cout << "\tArr [" << k << "] = " << Arr[k-1] << "\n";
+			k--;
+		}
+		if (N % 2 != 0)
+		{
+			cout << "\tArr [" << (N/2)+1 << "] = " << Arr[(N / 2) ] << "\n";
+
+		} 
+	}
+	if (num == 5)
+	{
+		int* Arr;
+		int N, A, B, max, k;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		cout << "Введите максимальный элемент массива: ";
+		cin >> max;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % max;
+			cout << "\tArr[" << i + 1 << "] = " << Arr[i] << "\n";
+		}
+		cout << "Ответ:\n";
+		if (N % 2 == 0)
+		{
+			for (int i = 0; i < N; i += 2)
+			{
+				cout << "\tArr[" << i + 1 << "] = " << Arr[i] << "\n";
+			}
+			for (int i = N; i > 1; i -= 2)
+			{
+				cout << "\tArr[" << i << "] = " << Arr[i-1] << "\n";
+			}
+		}
+		else
+		{
+			for (int i = 0; i < N; i += 2)
+			{
+				cout << "\tArr[" << i + 1 << "] = " << Arr[i] << "\n";
+			}
+			for (int i = N-1; i > 1; i -= 2)
+			{
+				cout << "\tArr[" << i << "] = " << Arr[i-1] << "\n";
+			}
+		}
+
+	}
+}
