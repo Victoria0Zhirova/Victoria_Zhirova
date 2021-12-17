@@ -1,0 +1,156 @@
+#include <iostream>
+#include <math.h>
+#include <malloc.h>
+#include<time.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int num;
+	cout << "Введите номер задачи: ";
+	cin >> num;
+	if (num == 1)
+	{
+		int* Arr;
+		float sr=0;
+		int N, A, B, max, K,L,sum=0,c=0;
+		cout << "Введите размер массива(N): ";
+		cin >> N;
+		cout << "Введите номера элементов массива(L и M: 1 <= K <= L <= N): \n";
+		cout << "\tK = ";
+		cin >> K;
+		cout << "\tL = ";
+		cin >> L;
+		cout << "Введите максимальный элемент массива: ";
+		cin >> max;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % max;
+			cout << "\tArr[" << i + 1 << "] = " << Arr[i] << "\n";
+		}
+		cout << "Ответ: ";
+		for (int i = K-1; i < L ; i++)
+		{
+			c++;
+			sum += Arr[i];
+		}
+		sr = sum / c;
+		cout << sr;
+	}
+	if (num == 2)
+	{
+		int* Arr;
+		int N, d,c=0;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tArr[" << i + 1 << "] = ";
+			cin >> Arr[i];
+		}
+		d = Arr[1] - Arr[0];
+		for (int i = 2; i < N; i++)
+		{
+			if (Arr[i] - Arr[i - 1] == d)
+			{
+				continue;
+			}
+			else
+			{
+				c = 1;
+				cout << 0;
+				break;
+			}
+		}
+		if (c != 1)
+		{
+			cout << "Разность прогрессии: " << d;
+		}
+	}
+	if (num == 3)
+	{
+		int* Arr;
+		int N, min=100000000000000,max;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		cout << "Введите максимальный элемент массива: ";
+		cin >> max;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % max;
+			cout << "\tArr[" << i << "] = " << Arr[i] << "\n";
+		}
+		for (int i = 2; i < N; i+=2)
+		{
+			if (Arr[i] < min)
+			{
+				min = Arr[i];
+			}
+		}
+		cout << "Минимальный элемент массива: " << min;
+	}
+	if (num == 4)
+	{
+		int* Arr;
+		int N, max;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % 10000000;
+			cout << "\tArr[" << i << "] = " << Arr[i] << "\n";
+		}
+		max = Arr[1];
+		for (int i = 2; i < N-1; i++)
+		{
+			if ((Arr[i - 1] < Arr[i] and Arr[i + 1] < Arr[i]) and (Arr[i]>max))
+			{
+				max = Arr[i];
+			}
+		}
+		cout << "Локальный максимум: " << max;
+	}
+	if (num == 5)
+	{
+		int* Arr;
+		int N, max,rav=-1,f,s;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		Arr = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			Arr[i] = rand() % 10000000;
+			cout << "\tArr[" << i << "] = " << Arr[i] << "\n";
+		}
+		Arr[rand() % (N - 1)] = Arr[rand() % (N - 1)];
+		cout << "После 'выбора равных':\n ";
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tArr[" << i << "] = " << Arr[i] << "\n";
+		}
+		for (int i = 0; i < N; i++)
+		{
+			for (int j = i+1; j < N; j++)
+			{
+				if (Arr[i] == Arr[j])
+				{
+					f = i;
+					s = j;
+					rav = Arr[i];
+					break;
+				}
+			}
+			if (rav == Arr[i])
+			{
+				break;
+			}
+		}
+		cout << "Номера элементов: " << f << "," << s;
+	}
+	
+}
