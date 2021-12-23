@@ -1,0 +1,184 @@
+#include <iostream>
+#include <math.h>
+#include <malloc.h>
+#include<time.h>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int num;
+	cout << "Введите номер задачи: ";
+	cin >> num;
+	if (num == 1)
+	{
+		int N;
+		int* A;
+		int* B;
+		cout << "Введите размеры массивов: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		B = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = rand() % 100;
+			cout << "\tA[" << i << "] = " << A[i] << "                        ";
+			B[i] = rand() % 100;
+			cout << "\tB[" << i << "] = " << B[i] << "\n";
+		}
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = A[i] ^ B[i];
+			B[i] = B[i] ^ A[i];
+			A[i] = A[i] ^ B[i];
+		}
+		cout << "После обмена значениями: \n";
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = " << A[i] << "                        ";
+			cout << "\tB[" << i << "] = " << B[i] << "\n";
+		}
+	}
+	if (num == 2)
+	{
+		int N;
+		float sr,sum,kol;
+		int* B;
+		int* A;
+		cout << "Введите размер массивa: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		B = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = rand() % 100;
+			cout << "\tA[" << i << "] = " << A[i]<<"\n";
+		}
+		for (int i = 0; i < N; i++)
+		{
+			if (i == 0)
+			{
+				sum = A[0] + A[1];
+				kol = 2;
+			}
+			else
+			{
+				sum = 0;
+				kol = 0;
+				for (int j = 1; j <= i; j++)
+				{
+					sum += A[j];
+					kol++;
+				}
+			}
+			sr =  (sum) / ( kol);
+			B[i] = sr;
+		}
+		cout << "Результат: \n";
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tB[" << i << "] = " << B[i] << "\n";
+		}
+	}
+	if (num == 3)
+	{
+		int N,is=0;
+		int* A;
+		cout << "Введите размер массивa: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = rand() % 1000;
+			cout << "\tA[" << i << "] = " << A[i] << "\n";
+		}
+		for (int i = N-1; i > 0; i--)
+		{
+			if ((A[i]) % 2 != 0)
+			{
+				is = int(A[i]);
+				cout << "Ответ: \n";
+				break;
+				
+			}
+		}
+		for (int i = 0; i < N; i++)
+		{
+			if (A[i] % 2 != 0)
+			{
+				A[i] += is;
+			}
+		}
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = " << A[i] << "\n";
+		}
+	}
+	if (num == 4)
+	{
+		int N, min=100000000,max=-1000000,nm,nb;
+		int* A;
+		cout << "Введите размер массивa: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = rand() % 10000;
+			cout << "\tA[" << i << "] = " << A[i] << "\n";
+		}
+		for (int i = 0; i < N; i++)
+		{
+			if (A[i] < min)
+			{
+				min = A[i];
+				nm = i;
+			}
+			if (A[i] > max)
+			{
+				max = A[i];
+				nb = i;
+			}
+		}
+		for (int i = nm+1; i < nb; i++)
+		{
+			A[i] = 0;
+		}
+		cout << "Ответ:\n";
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = " << A[i] << "\n";
+		}
+	}
+	if (num == 5)
+	{
+		int* A;
+		int N,x=0,j=0;
+		cout << "Введите размер массивa: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			A[i] = rand() % 10000;
+			cout << "\tA[" << i << "] = ";
+			cin >> A[i];
+		}
+		for (int i = 1; i < N; i++) 
+		{
+			x = A[i];
+			j = i;
+			while (j > 0 && x < A[j - 1]) 
+			{
+				A[j] = A[j - 1];
+				j--;
+			}
+			A[j] = x;
+		}
+
+		cout << "Ответ: \n";
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = " << A[i] << "\n";
+		}
+	}
+
+}
