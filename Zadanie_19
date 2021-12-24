@@ -1,0 +1,253 @@
+#include <iostream>
+#include <math.h>
+#include <malloc.h>
+#include<time.h>
+#include <conio.h>
+#include <vector>
+#include <memory.h>
+#include <list>
+#include <iterator>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "rus");
+	int num;
+	cout << "Введите номер задачи: ";
+	cin >> num;
+	if (num == 1)
+	{
+		list <int> A;
+		int N,c ;
+		cout << "Введите размер массивa: ";
+		cin >> N;
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = ";
+			cin >> c;
+			A.push_back(c);
+		}
+		A.unique();
+		cout << "Массив после преобразования: ";
+		copy(A.begin(), A.end(), ostream_iterator<int>(cout, " "));
+	}
+	if (num == 2)
+	{
+		int N;
+		int* A;
+		int* B;
+		int* C;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		A = (int*)malloc(N * sizeof(int));
+		C = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = ";
+			cin >> A[i];
+		}
+		int d,z,k=0;
+		for (int i = 0; i < N; i++)
+		{
+			C[i] = 0;
+		}
+		int i = 0;
+		while (i < N)
+		{
+			d = 0;
+			for (int j = i+1; j < N; j++)
+			{
+				if (A[i] == A[j])
+				{
+					d ++;
+					z = j;
+				}
+			}
+			if (d == 1)
+			{
+				C[z] = A[i];
+			}
+			if (d > 1)
+			{
+				i += d;
+			}
+			else
+			{
+				i++;
+			}
+		}
+		int l = 0;
+		for (int i = 0; i < N; i++)
+		{
+			if (C[i] != 0)
+			{
+				l++;
+			}
+		}
+		B = (int*)malloc((N) * sizeof(int));
+		cout << "Размер преобразованного массива: " << N - l*2<<"\n";
+		i = 0;
+		while (i < (N))
+		{
+			if (C[i] == 0 and C[i+1]==0)
+			{
+				B[i] = A[i];
+				i++;
+			}
+			else
+			{
+				i +=2;
+			}
+		}
+		for (int i = 0; i < (N); i++)
+		{
+			if (B[i] > 0)
+			{
+				cout << "\tA[" << i << "] = " << B[i] << "\n";
+			}
+		}	
+	}
+	if (num == 3)
+	{
+		int N;
+		int* A;
+		int* B;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		int nm, nb;
+		A = (int*)malloc(N * sizeof(int));
+		B = (int*)malloc((N+2) * sizeof(int));
+		int max = -100000000, min = 1000000000;
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = ";
+			cin >> A[i];
+		}
+		for (int i = 0; i < N; i++)
+		{
+			if (A[i] > max)
+			{
+				nb=i;
+				max = A[i];
+			}
+			if (A[i] < min)
+			{
+				nm=i;
+				min = A[i];
+			}
+		}
+		int i = 0,k=0;
+		while (i < (N + 2))
+		{
+			if ((i-k) == nb)
+			{
+				B[i] = max;
+				B[i + 1] = 0;
+				i += 2;
+				k++;
+			}
+			else
+			{
+				if ((i-k) == nm)
+				{
+					B[i] = 0;
+					B[i + 1] = min;
+					i += 2;
+					k++;
+				}
+				else
+				{
+					B[i] = A[i - k];
+					i++;
+				}
+			}
+		}
+		cout << "Преобразованный массив: \n";
+		for (int i = 0; i < (N+2); i++)
+		{
+			cout << "\tA[" << i << "] = " << B[i] << "\n";
+		}
+	}
+	if (num == 4)
+	{
+		int N;
+		int* A;
+		int* B;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		int m=0;
+		A = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = ";
+			cin >> A[i];
+			if (A[i] < 0)
+			{
+				m++;
+			}
+		}
+		B = (int*)malloc((N+m) * sizeof(int));
+		int i = 0,k=0;
+		while (i < (N + m))
+		{
+			if (A[i-k] < 0)
+			{
+				B[i+1] = 0;
+				B[i] = A[i-k];
+				k++;
+				i += 2;
+			}
+			else
+			{
+				B[i] = A[i - k];
+				i++;
+			}
+		}
+		cout << "Преобразованный массив: \n";
+		for (int i = 0; i < (N + m); i++)
+		{
+			cout << "\tA[" << i << "] = " << B[i] << "\n";
+		}
+	}
+	if (num == 5)
+	{
+		int N;
+		int* A;
+		int* B;
+		cout << "Введите размер массива: ";
+		cin >> N;
+		int m=0;
+		A = (int*)malloc(N * sizeof(int));
+		for (int i = 0; i < N; i++)
+		{
+			cout << "\tA[" << i << "] = ";
+			cin >> A[i];
+			if (A[i] > 0)
+			{
+				m++;
+			}
+		}
+		B = (int*)malloc((N+m) * sizeof(int));
+		int i = 0,k=0;
+		while (i < (N + m))
+		{
+			if (A[i-k] > 0)
+			{
+				B[i] = 0;
+				B[i + 1] = A[i-k];
+				k++;
+				i += 2;
+			}
+			else
+			{
+				B[i] = A[i - k];
+				i++;
+			}
+		}
+		cout << "Преобразованный массив: \n";
+		for (int i = 0; i < (N + m); i++)
+		{
+			cout << "\tA[" << i << "] = " << B[i] << "\n";
+		}
+	}
+}
